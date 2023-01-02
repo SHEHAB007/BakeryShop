@@ -1,0 +1,85 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    color : #d34927;
+  margin-bottom: 60px;
+}
+
+.navbar-nav
+{
+    justify-content : flex-end;
+}
+
+a:link
+{
+    color :brown;
+    text-decoration:auto;
+}
+a:visited
+{
+    color:chartreuse;
+    text-decoration:auto;
+}
+a:hover
+{
+    color:brown;
+
+}
+a:active
+{
+    color: crimson;
+}
+a.order-button,a.order-button:hover
+{
+    color:antiquewhite;
+}
+.productInfo , .action
+{
+    max-width : 200px;
+}
+p
+{
+    font-size:0.8rem;
+}
+#orderProcess li
+{
+    color :brown;
+    display:inline;
+    font-size:1.2rem;
+    margin-right:15px;
+    padding: 3px 0px 0px 5px;
+}
+.step-number
+{
+    background-color:darkcyan;
+    border: 1px solid darkcyan;
+    font-size: 1.5rem;
+    margin-right: 5px;
+    padding: 3px 10px;
+}
+.current .step-number {
+    background-color: darkcyan;
+    border-color: darkcyan;
+    color: brown;
+}
+.orderPageList
+{
+    padding-inline-start: 20px;
+}
+.action .order-button
+{
+    margin-left: 20px;
+}
