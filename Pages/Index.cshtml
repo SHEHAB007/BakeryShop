@@ -1,0 +1,69 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div id="Feature" class="row">
+    <div class="col-8 ">
+        <img src="~/Images/Products/@Model.Feature.ImageName" alt="Feature" class="img-fluid rounded"/>
+    </div>
+
+    <div id="featureProductInfo" class="col-4">
+        <div id="productInfo">
+            <h2>
+                @Model.Feature.ProductName
+            </h2>
+            <p class="price">
+                $@string.Format("{0:f}", Model.Feature.ProductPrice)
+            </p>
+            <p class="description">
+                @Model.Feature.ProductDescription
+            </p>
+            <div id="CallToAction">
+                <a asp-page="/Order"
+                class="btn bg-danger order-button"
+                title="Order @Model.Feature.ProductName"
+                asp-route-id="@Model.Feature.ProductId">
+                    Order Now
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="FeatureWrapper" class="row">
+    @foreach(var product in Model.Products)
+    {
+        <div class="col-sm-3">
+                  <a asp-page="/Order" asp-route-id="@product.ProductId"
+                     title="Order @product.ProductName">
+            
+                     <div class="productInfo">
+                       <h3>
+                         @product.ProductName
+                       </h3>
+                       <img src="~/Images/Products/@product.ImageName" alt="Image Product" class="img-fluid rounded"/>
+                       <p class="description">
+                           @product.ProductDescription
+                       </p>
+
+                      </div>
+                  </a>
+
+            <div id="CallToAction">
+                <p class="price float-left">
+                    $@string.Format("{0:f}", product.ProductPrice)
+                </p>
+                <a asp-page="/Order"
+               class="btn bg-danger order-button float-right"
+               title="Order @product.ProductName"
+               asp-route-id="@product.ProductId">
+                    Order Now
+                </a>
+            </div>
+        </div>
+    }
+</div>
